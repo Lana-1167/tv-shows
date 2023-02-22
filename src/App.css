@@ -36,6 +36,42 @@
     transform: rotate(360deg);
   }
 }
+
+.Header {
+  display: flex;
+  justify-content: space-between;
+
+  background-color: tomato;
+  padding: 10px;
+  width: 10px;
+}
+
+.Logo {
+  width: 10px;
+  height: 10px;
+  background-color: aquamarine;
+
+
+}
+
+.Navigator {
+color: white;
+font-weight: bold;
+padding: 10px;
+}
+
+
+
+.Search {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+
+
+
 .Show {
   display: block;
   width: 200px;
