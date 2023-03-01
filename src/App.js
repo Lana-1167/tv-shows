@@ -12,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      
       <h1>The Best TV Show App</h1>
       <ShowList shows={showsData}/>
       
