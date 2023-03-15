@@ -73,6 +73,13 @@
   border-radius: 20px;
 }
 
+.Navigator a {
+color: white;
+font-weight: bold;
+/*padding: 10px;*/
+
+}
+
 .Navigator {
 color: white;
 font-weight: bold;
