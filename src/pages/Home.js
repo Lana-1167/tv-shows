@@ -1,6 +1,13 @@
+import ShowList from "../components/ShowList"
+import showsData from "../shows-data"
+
+
 function Home() {
     return (
-       <h2>This is the Home page</h2>
+        <div classname="HomePage">
+        <h1>The Best TV Show App</h1>
+        <ShowList shows={showsData}/>
+        </div>
     )
 }
 export default Home
