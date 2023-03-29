@@ -65,6 +65,7 @@
   /*justify-content: space-between;
   width: 500px;*/
   align-items: center;
+  list-style: none;
 }
 .Search {
   width: 150px;
@@ -73,12 +74,13 @@
   border-radius: 20px;
 }
 
-.Navigator a {
+.Navigation a {
 color: white;
 font-weight: bold;
 /*padding: 10px;*/
 
 }
+
 
 .Navigator {
 color: white;
