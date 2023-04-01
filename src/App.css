@@ -97,6 +97,7 @@ font-weight: bold;
 
 
 .Show {
+  
   display: block;
   width: 200px;
   border: 1px solid black;
@@ -112,10 +113,12 @@ text-align: center;
 
 
 .Show-image {
+  
   width: 100%;
 }
 
 .ShowList {
+  
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }

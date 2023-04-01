@@ -1,0 +1,73 @@
+/*.ShowPageBac {
+    
+    /*background-image: url("https://static.tvmaze.com/uploads/images/medium_portrait/0/2400.jpg") ;
+    background-repeat: no-repeat;
+    background-position: center;*/
+    /*background-blend-mode: lighten;
+
+    background-size: 100%;
+    opacity: 0.4; 
+
+}
+*/
+.ShowPageBac {
+    background-image: url("https://static.tvmaze.com/uploads/images/medium_portrait/0/2400.jpg") ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: lighten;
+
+    background-size: 100%;
+    opacity: 0.4;    
+
+    z-index: 5;
+    
+
+}
+
+/*.ShowPage {
+    background-image: url("https://static.tvmaze.com/uploads/images/medium_portrait/0/2400.jpg") ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: lighten;
+
+    background-size: 100%;
+    opacity: 0.4;    
+
+    z-index: 1;
+    
+
+}
+*/
+.ShowPage img {
+    
+    opacity: 1; 
+    z-index: 1;
+    box-shadow: 20px 20px 60px 20px blueviolet;
+     
+}
+
+
+
+.ShowPage h1 {
+    color: blueviolet;
+    background-image: url ('${.ShowPage img}');
+    background-repeat: no-repeat;
+    text-shadow: 2px 2px 5px black; 
+    
+    
+}
+
+
+
+/*.ShowPage {
+    background-image: url ('${show.image.medium}');
+    background-repeat: no-repeat;
+    /*background-blend-mode: darken;
+    opacity: 0,1;
+    background-size: 100%;
+    
+}
+*/
+
+
+
