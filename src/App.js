@@ -7,6 +7,7 @@ import Upcoming from './pages/Upcoming';
 import NotFound from './pages/NotFound';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import ShowPage from './pages/ShowPage';
+import  Search  from './pages/Search';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
 
           <Route path ="/upcoming" element={<Upcoming />}/>
           <Route path="/show/:showID" element={<ShowPage />}/>
+          <Route path='/search' element={<Search />}/>
           <Route path ="*" element={<NotFound />}/>
         </Routes>
       
