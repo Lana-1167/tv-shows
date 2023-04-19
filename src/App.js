@@ -24,7 +24,7 @@ function App() {
 
           <Route path ="/upcoming" element={<Upcoming />}/>
           <Route path="/show/:showID" element={<ShowPage />}/>
-          <Route path='/search' element={<Search />}/>
+          <Route path="/search/:searchText" element={<Search />}/>
           <Route path ="*" element={<NotFound />}/>
         </Routes>
       

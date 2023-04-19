@@ -11,5 +11,7 @@ export function getHomeShows() {
 }
 
 export function searchForShow(text) {
-    return showsData.filter(show => show.name.toLowerCase().includes(text.toLowerCase()))
+    return showsData.filter(
+        show => show.name.toLowerCase().includes(text.toLowerCase())
+        )
 }
