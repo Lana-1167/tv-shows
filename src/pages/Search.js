@@ -2,14 +2,25 @@ import { searchForShow } from "../helpers/showHelper";
 
 import ShowList from "../components/ShowList";
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 
 
 function Search () {
 
     const params = useParams()
+    const [searchResults, setSearchResults] =useState([])
 
-    const searchResults = searchForShow(params.searchText)
+
+    useEffect( ()=>{
+        const fetchResults =async () => {
+        const shows = await searchForShow (params.searchText)    
+        setSearchResults(shows)
+        }
+        fetchResults()
+    })
+
+
 
     return (
         <>

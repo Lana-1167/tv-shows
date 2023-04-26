@@ -10,8 +10,10 @@ export function getHomeShows() {
     return showsData
 }
 
-export function searchForShow(text) {
-    return showsData.filter(
-        show => show.name.toLowerCase().includes(text.toLowerCase())
-        )
+export async function searchForShow(text) {
+   const response = await fetch("https://api.tvmaze.com/search/shows?q=" + text)
+    const jsonData = await response.json()
+    const showResults = jsonData.map( element => element.show )
+    
+    return showResults
 }
