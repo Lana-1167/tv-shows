@@ -3,10 +3,23 @@ import './ShowPage.css';
 import { useParams } from "react-router-dom";
 import { getShowByID } from "../helpers/showHelper";
 import NotFound from "./NotFound";
+import { useState, useEffect} from 'react';
+
+
 
 function ShowPage () {
-    const params = useParams()
-    const show = getShowByID(params.showID)
+    const {showID} = useParams()
+    
+    const [show,setShow] = useState(undefined)
+
+    useEffect( ()=>{
+            const fetchShow =async () => {
+            const showData = await getShowByID (showID)    
+            setShow(showData)
+        }
+        fetchShow()
+    }, [showID])
+
     
     if (!show) {
        return (<NotFound/>)
