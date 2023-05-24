@@ -24,6 +24,16 @@
   color: white;
 }
 
+
+
+
+
+
+
+
+
+
+
 .App-link {
   color: #61dafb;
 }
@@ -121,4 +131,10 @@ text-align: center;
   
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+}
+
+.ShowPage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }

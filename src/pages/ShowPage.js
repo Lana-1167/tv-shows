@@ -24,8 +24,18 @@ function ShowPage () {
     
     if (!show) {
        return (<NotFound/>)
+
+
+       
     }
     
+    const  addFavorite = () => {
+
+        const existingFavorites = JSON.parse( localStorage.getItem("favorites"));
+        const favorites = JSON.stringify([showID, ...existingFavorites]);
+        localStorage.setItem("favorites", favorites || "[]");
+       };
+
     return (
     
         <div className="ShowPage">
@@ -39,6 +49,8 @@ function ShowPage () {
                 <h3>Rating: {show.rating.average}</h3>
                 <h4>Genres: {show.genres.join(', ')}</h4>
                 {!!show._embedded.cast && show._embedded.cast.map((member)=><div>{member.person.name + ' as ' + member.character.name}</div>)}
+        <button onClick={addFavorite}>Add favorites</button>
+        
         </div>
     )
 }
