@@ -12,6 +12,9 @@ function ShowPage () {
     
     const [show,setShow] = useState(undefined)
 
+    const existingFavorites = JSON.parse( localStorage.getItem("favorites" )|| "[]");
+    const [isFavorites, setIsFavorited]=useState(existingFavorites.includes(showID))
+
     useEffect( ()=>{
             const fetchShow =async () => {
             const showData = await getShowByID(showID) 
@@ -29,11 +32,22 @@ function ShowPage () {
        
     }
     
-    const  addFavorite = () => {
+    const  toggleFavorite = () => {
 
-        const existingFavorites = JSON.parse( localStorage.getItem("favorites"));
-        const favorites = JSON.stringify([showID, ...existingFavorites]);
-        localStorage.setItem("favorites", favorites || "[]");
+       
+        
+        let newFavorites=[]
+        if (existingFavorites.includes (showID)) {
+            newFavorites=existingFavorites.filter(id =>id !==showID)
+            setIsFavorited(false)
+        }else{
+            newFavorites=[showID, ...existingFavorites]
+            setIsFavorited(true)
+        }
+
+
+        const favorites = JSON.stringify(newFavorites);
+        localStorage.setItem("favorites", favorites );
        };
 
     return (
@@ -43,13 +57,16 @@ function ShowPage () {
                 <h1>{show.name}</h1>
                
                 <img src={show.image.medium}
-                alt={ show.name}></img>
+                alt={ show.name}/>
                
                 <h2>Language: {show.language} </h2>
                 <h3>Rating: {show.rating.average}</h3>
                 <h4>Genres: {show.genres.join(', ')}</h4>
                 {!!show._embedded.cast && show._embedded.cast.map((member)=><div>{member.person.name + ' as ' + member.character.name}</div>)}
-        <button onClick={addFavorite}>Add favorites</button>
+        <button onClick={toggleFavorite}>
+{isFavorites ? 'Remove Favorite' : 'Add to Favorite'}
+
+            </button>
         
         </div>
     )
